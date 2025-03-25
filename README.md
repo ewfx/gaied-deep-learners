@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀 Email Processing & Classification API
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -14,7 +14,7 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+This project automates email processing by extracting text and attachments (PDFs, images) and classifying the content using an AI-powered LLM. The goal is to streamline email-based workflows and improve response efficiency.
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
@@ -24,37 +24,98 @@ A brief overview of your project and its purpose. Mention which problem statemen
 ![Screenshot 1](link-to-image)
 
 ## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+Managing large volumes of emails manually is inefficient. This project aims to automate email classification and response processing using AI, reducing human effort and error.
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+- Extracts text from email bodies, PDFs, and images
+- Processes extracted data using an AI model
+- Identifies request type, sub-request type, and extracted fields
+- Detects duplicate requests
 
 ## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+- Used FastAPI for API development
+- Utilized PyPDF2 and Tesseract OCR for text extraction
+- Leveraged Google AI's Gemini model for classification
+- Built structured JSON output for easy integration
 
 ## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+1. **Extracting text from attachments** - Used Tesseract for image OCR and PyPDF2 for PDFs.
+2. **Handling email formats** - Emails vary in structure, so regex and NLP techniques were applied.
+3. **Improving AI classification accuracy** - Fine-tuned prompts and used confidence scores.
 
 ## 🏃 How to Run
-1. Clone the repository  
-   ```sh
-   git clone https://github.com/your-repo.git
-   ```
-2. Install dependencies  
-   ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
-   ```
-3. Run the project  
-   ```sh
-   npm start  # or python app.py
-   ```
+### Prerequisites
+- Python 3.10 or higher
+- Pip (Python package manager)
+- Tesseract OCR (for image text extraction)
+
+### Install Dependencies
+```sh
+pip install -r requirements.txt
+```
+
+### Environment Variables
+Create a `.env` file in the project root:
+```
+GEMINI_API_KEY=your_google_ai_key
+TESSERACT_PATH=/path/to/tesseract.exe (Windows) or /usr/bin/tesseract (Linux)
+```
+
+### Start the API Server
+```sh
+uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+### API Usage
+#### **POST /process-emails**
+Processes emails and classifies them.
+
+**Request:**
+```json
+{
+  "email_subject": "Account Issue - Unable to Login",
+  "email_body": "I am unable to log into my account. Please help.",
+  "attachments": ["base64_encoded_pdf", "base64_encoded_image"]
+}
+```
+
+**Response:**
+```json
+{
+  "request_type": {
+    "type": "Adjustment",
+    "confidence_score": 1
+  },
+  "sub_request_type": [],
+  "extracted_fields": {
+    "account_issue": "Unable to log into account, password reset request",
+    "email": "user@example.com",
+    "name": "John Doe"
+  },
+  "is_duplicate": false,
+  "duplicate_reason": null
+}
+```
+
+#### **GET /health**
+Checks if the API is running.
+```json
+{
+  "status": "ok"
+}
+```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 **Backend:** FastAPI, Python
+- 🔹 **AI Model:** Google AI Gemini
+- 🔹 **Data Processing:** Tesseract OCR, PyPDF2
+- 🔹 **Email Integration:** Microsoft Graph API
 
 ## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+- **Janardhan Reddy Chinthakunta** - [GitHub](#) | [LinkedIn](#)
+- **Subhajit Ghosh** - [GitHub](#) | [LinkedIn](#)
+
+---
+**Version:** 1.0  
+**License:** MIT
+

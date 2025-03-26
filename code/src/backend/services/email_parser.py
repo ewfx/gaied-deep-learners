@@ -2,7 +2,7 @@ import email
 from email import policy
 import tempfile
 from typing import Dict, List
-import os
+from ..preprocessing.text_cleaning import EmailCleaner
 
 class EmailParser:
     @staticmethod
@@ -33,4 +33,9 @@ class EmailParser:
                         'path': tmp.name,
                         'content_type': part.get_content_type()
                     })
+
+        #  Clean email content before returning it
+        cleaner = EmailCleaner()
+        result['body'] = cleaner.clean_email_content(result['body'])
+
         return result

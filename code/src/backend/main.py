@@ -82,7 +82,7 @@ async def process_email(file: UploadFile = File(...)):
             sender=email_data['headers']['from'],
             sent_date=email_data['headers']['date'],
             email_body=email_data['body'],
-            previous_hashes=set(processed_hashes)
+            previous_hashes=list(processed_hashes)
         )
         processed_hashes.add(duplicate_info['hash'])
 

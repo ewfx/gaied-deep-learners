@@ -1,8 +1,9 @@
 import google.generativeai as genai
 import json
+import hashlib
 import re
 from ..models.extracted_data import ExtractedData
-from ..models.request_type_mapping import REQUEST_TYPES
+from ..models.request_type_mapping import REQUEST_TYPES, REQUEST_PRIORITY
 
 class Classifier:
     def __init__(self, api_key: str):
@@ -28,11 +29,16 @@ class Classifier:
         try:
             response = self.model.generate_content(prompt)
             raw_text = response.text.strip()
-
+            print(response)
             # 🔍 Remove any unwanted "```json" or "```"
             cleaned_text = re.sub(r"^```json|```$", "", raw_text).strip()
             result = json.loads(cleaned_text)
-            extracted_data = ExtractedData.from_llm_response(result)
+            extracted_data = ExtractedData.from_llm_response(result, REQUEST_PRIORITY)
             return extracted_data
         except Exception as e:
             raise Exception(f"Classification failed: {str(e)}")
+
+
+    def compute_hash(self, email_content: str) -> str:
+        """Generate a hash for duplicate detection."""
+        return hashlib.sha256(email_content.encode()).hexdigest()

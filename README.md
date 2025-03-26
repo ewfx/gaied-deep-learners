@@ -30,13 +30,21 @@ A cutting-edge solution that automates processing of banking service requests re
 🖼️ Screenshots:
 
 ![Screenshot 1](artifacts/demo/screenshots/application_startup_success.png)
+
 ![Screenshot 2](artifacts/demo/screenshots/swagger_loading.png)
+
 ![Screenshot 3](artifacts/demo/screenshots/uploading_test_email_message.png)
+
 ![Screenshot 4](artifacts/demo/screenshots/duplicate_email_check.png)
+
 ![Screenshot 5](artifacts/demo/screenshots/multiple_request_type_1.png)
+
 ![Screenshot 6](artifacts/demo/screenshots/multiple_request_type_2.png)
+
 ![Screenshot 7](artifacts/demo/screenshots/multiple_request_type_3.png)
+
 ![Screenshot 8](artifacts/demo/screenshots/multiple_request_type_4.png)
+
 ![Screenshot 9](artifacts/demo/screenshots/success_response_for_request_sub_request_type.png)
 
 

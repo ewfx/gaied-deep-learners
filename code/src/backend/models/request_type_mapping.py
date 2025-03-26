@@ -10,11 +10,11 @@ REQUEST_TYPES = {
 
 # Define a priority score (lower number = higher priority)
 REQUEST_PRIORITY = {
-    "Money Movement - Inbound": 1,
-    "Money Movement - Outbound": 2,
-    "Adjustment": 3,
-    "Fee Payment": 4,
-    "AU Transfer": 5,
-    "Closing Notice": 6,
-    "Commitment Change": 7
+    "Money Movement - Inbound": 1,  # CRITICAL
+    "Money Movement - Outbound": 2,  # HIGH
+    "Adjustment": 3,  # MEDIUM
+    "Fee Payment": 3,  # MEDIUM (changed from 4)
+    "AU Transfer": 4,  # LOW (changed from 5)
+    "Closing Notice": 4,  # LOW (changed from 6)
+    "Commitment Change": 4  # LOW (changed from 7)
 }

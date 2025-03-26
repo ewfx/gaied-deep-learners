@@ -26,7 +26,8 @@ A cutting-edge solution that automates processing of banking service requests re
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
+📹 [Video Demo](#) : [Click Here] (artifacts/demo/Video_Demo.mp4)
+
 🖼️ Screenshots:
 
 ![Screenshot 1](artifacts/demo/screenshots/application_startup_success.png)
@@ -47,6 +48,7 @@ A cutting-edge solution that automates processing of banking service requests re
 
 ![Screenshot 9](artifacts/demo/screenshots/success_response_for_request_sub_request_type.png)
 
+![Sequence Diagram](artifacts/demo/sequence_diagram.png)
 
 ## 💡 Inspiration
 Managing large volumes of emails manually is inefficient. This project aims to automate email classification and response processing using AI, reducing human effort and error.
@@ -163,8 +165,8 @@ Checks if the API is running.
 - 🔹 **Data Processing:** Tesseract OCR, PyPDF2
 
 ## 👥 Team
-- **Janardhan Reddy Chinthakunta** - [GitHub](#) | [LinkedIn](#)
-- **Subhajit Ghosh** - [GitHub](#) | [LinkedIn](#)
+- **Janardhan Reddy Chinthakunta** - [GitHub](https://github.com/Jana53) | [LinkedIn](https://www.linkedin.com/in/janardhan-reddy-chinthakunta-a2bab5144/)
+- **Subhajit Ghosh** - [GitHub](https://github.com/subhajitghosh88) | [LinkedIn](https://www.linkedin.com/in/subhajit-ghosh-91280286/)
 - **Nagaraju Malyala** - [GitHub](#) | [LinkedIn](#)
 - **Pavan kumar Sarvaraju** - [GitHub](#) | [LinkedIn](#)
 

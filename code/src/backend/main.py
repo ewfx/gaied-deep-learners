@@ -71,12 +71,19 @@ async def process_email(file: UploadFile = File(...)):
         ATTACHMENTS:
         {'\n\n'.join(f"{a['filename']}:\n{a['text']}" for a in attachments_data)}
         """
-
+        print(f"Parsed headers: {email_data['headers']}")  # Debug print
         # Classify content
         classifier = Classifier(config.gemini_api_key)
+        print(email_data['headers']['subject'])
 
-        # Detect duplicates
-        duplicate_info = classifier.detect_duplicates(content_str, processed_hashes)
+        # Detect duplicates with the new signature
+        duplicate_info = classifier.detect_duplicates(
+            subject=email_data['headers']['subject'],
+            sender=email_data['headers']['from'],
+            sent_date=email_data['headers']['date'],
+            email_body=email_data['body'],
+            previous_hashes=set(processed_hashes)
+        )
         processed_hashes.add(duplicate_info['hash'])
 
         if duplicate_info['is_duplicate']:

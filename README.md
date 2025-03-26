@@ -166,7 +166,7 @@ Checks if the API is running.
 
 ## 👥 Team
 - **Janardhan Reddy Chinthakunta** - [GitHub](#) | [LinkedIn](#)
-- **Subhajit Ghosh** - [GitHub](#) | [LinkedIn](#)
+- **Subhajit Ghosh** - [GitHub](https://github.com/subhajitghosh88) | [LinkedIn](https://www.linkedin.com/in/subhajit-ghosh-91280286/)
 - **Nagaraju Malyala** - [GitHub](#) | [LinkedIn](#)
 - **Pavan kumar Sarvaraju** - [GitHub](#) | [LinkedIn](#)
 

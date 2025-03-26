@@ -165,8 +165,8 @@ Checks if the API is running.
 - 🔹 **Data Processing:** Tesseract OCR, PyPDF2
 
 ## 👥 Team
-- **Janardhan Reddy Chinthakunta** - [GitHub](#) | [LinkedIn](#)
-- **Subhajit Ghosh** - [GitHub](#) | [LinkedIn](#)
+- **Janardhan Reddy Chinthakunta** - [GitHub](https://github.com/Jana53) | [LinkedIn](https://www.linkedin.com/in/janardhan-reddy-chinthakunta-a2bab5144/)
+- **Subhajit Ghosh** - [GitHub](https://github.com/subhajitghosh88) | [LinkedIn](https://www.linkedin.com/in/subhajit-ghosh-91280286/)
 - **Nagaraju Malyala** - [GitHub](#) | [LinkedIn](#)
 - **Pavan kumar Sarvaraju** - [GitHub](#) | [LinkedIn](#)
 

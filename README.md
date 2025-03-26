@@ -29,7 +29,24 @@ A cutting-edge solution that automates processing of banking service requests re
 📹 [Video Demo](#) (if applicable)  
 🖼️ Screenshots:
 
-![Screenshot 1](link-to-image)
+![Screenshot 1](artifacts/demo/screenshots/application_startup_success.png)
+
+![Screenshot 2](artifacts/demo/screenshots/swagger_loading.png)
+
+![Screenshot 3](artifacts/demo/screenshots/uploading_test_email_message.png)
+
+![Screenshot 4](artifacts/demo/screenshots/duplicate_email_check.png)
+
+![Screenshot 5](artifacts/demo/screenshots/multiple_request_type_1.png)
+
+![Screenshot 6](artifacts/demo/screenshots/multiple_request_type_2.png)
+
+![Screenshot 7](artifacts/demo/screenshots/multiple_request_type_3.png)
+
+![Screenshot 8](artifacts/demo/screenshots/multiple_request_type_4.png)
+
+![Screenshot 9](artifacts/demo/screenshots/success_response_for_request_sub_request_type.png)
+
 
 ## 💡 Inspiration
 Managing large volumes of emails manually is inefficient. This project aims to automate email classification and response processing using AI, reducing human effort and error.
@@ -80,29 +97,54 @@ Processes emails and classifies them.
 
 **Request:**
 ```
-import requests
-
-url = "http://localhost:8000/process"
-files = {'file': open('sample_email.eml', 'rb')}
-response = requests.post(url, files=files)
-
-print(response.json())
+File
 ```
 
 **Response:**
-```json
+```
 {
   "classification": {
     "primary_request": {
-      "type": "Money Movement - Inbound",
-      "sub_type": "Principal",
-      "amount": "$24,714.36",
-      "confidence": 0.92
+      "request_type": "Money Movement - Inbound",
+      "sub_request_type": "Principal",
+      "confidence_score": 0.9,
+      "extracted_fields": {},
+      "is_duplicate": false,
+      "priority": 1,
+      "duplicate_reason": null,
+      "raw_content": null
     },
-    "routing": {
-      "team": "Payments Processing",
-      "assignee": "Processor II"
+    "secondary_requests": [],
+    "is_thread": false,
+    "thread_relations": {},
+    "raw_content": {
+      "headers": {
+        "subject": "Loan Payment Request - OCR & Classification Test",
+        "from": "johndoe@example.com",
+        "to": "loanservicing@example.com",
+        "date": "",
+        "cc": ""
+      },
+      "body": "Dear Loan Servicing Team,\n\nPlease find attached a PDF document containing an image-based loan payment request.\nThis is intended for OCR verification and Request Type classification testing.\n\nThis request pertains to a money movement - inbound transaction related to the principal amount of the loan.",
+      "attachments": [
+        {
+          "filename": "loan_request.pdf",
+          "content_type": "application/pdf",
+          "text": null
+        }
+      ]
     }
+  },
+  "routing": {
+    "primary": {
+      "team": "Payments Processing",
+      "assignee": "Senior Processor",
+      "request_type": "Money Movement - Inbound",
+      "priority": "CRITICAL",
+      "confidence_score": 0.9,
+      "auto_assign": true
+    },
+    "secondary": []
   }
 }
 ```
@@ -123,6 +165,8 @@ Checks if the API is running.
 ## 👥 Team
 - **Janardhan Reddy Chinthakunta** - [GitHub](#) | [LinkedIn](#)
 - **Subhajit Ghosh** - [GitHub](#) | [LinkedIn](#)
+- **Nagaraju Malyala** - [GitHub](#) | [LinkedIn](#)
+- **Pavan kumar Sarvaraju** - [GitHub](#) | [LinkedIn](#)
 
 ---
 **Version:** 1.0  

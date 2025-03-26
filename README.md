@@ -26,7 +26,7 @@ A cutting-edge solution that automates processing of banking service requests re
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) : [Click Here] (artifacts/demo/Video_Demo.mp4)
+📹 [Video Demo](artifacts/demo/Video_Demo.mp4) : [Click Here] (artifacts/demo/Video_Demo.mp4)
 
 🖼️ Screenshots:
 

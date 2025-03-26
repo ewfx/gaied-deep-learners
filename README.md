@@ -26,7 +26,8 @@ A cutting-edge solution that automates processing of banking service requests re
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
+📹 [Video Demo](#) : [Click Here] (artifacts/demo/Video_Demo.mp4)
+
 🖼️ Screenshots:
 
 ![Screenshot 1](artifacts/demo/screenshots/application_startup_success.png)
@@ -47,6 +48,7 @@ A cutting-edge solution that automates processing of banking service requests re
 
 ![Screenshot 9](artifacts/demo/screenshots/success_response_for_request_sub_request_type.png)
 
+![Sequence Diagram](artifacts/demo/sequence_diagram.png)
 
 ## 💡 Inspiration
 Managing large volumes of emails manually is inefficient. This project aims to automate email classification and response processing using AI, reducing human effort and error.
